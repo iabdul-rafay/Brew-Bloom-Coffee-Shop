@@ -1,4 +1,4 @@
-# [KOHI] — Scrollytelling Landing Page
+# Brew&Bloom Coffee Shop — Scrollytelling Landing Page
 
 A high-end scrollytelling experience built with Next.js 14, Framer Motion, and HTML5 Canvas.
 

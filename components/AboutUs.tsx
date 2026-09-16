@@ -99,15 +99,19 @@ export default function AboutUs() {
 
           {/* Top-Left Logo */}
           <div className="absolute top-8 left-8 sm:top-12 sm:left-12 z-20 flex items-center gap-3">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/25 flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M12 2C6.5 2 2 6.5 2 12c0 4.5 3 8.3 7.2 9.5-.1-.7-.2-1.5-.2-2.3 0-4.4 3.6-8 8-8 .8 0 1.6.1 2.3.2C18.1 4.5 14.3 2 12 2z"/>
-                <path d="M18.8 8.8C18.3 8.3 17.6 8 17 8c-3.3 0-6 2.7-6 6 0 .6.3 1.3.8 1.8 2.2 2.2 5.8 2.2 8 0s2.2-5.8 0-8z" opacity="0.8"/>
-              </svg>
+            <img
+              src="/logo.png"
+              alt="Brew&Bloom Coffee Shop"
+              className="w-10 h-10 rounded-full object-cover border border-white/30 shadow-md"
+            />
+            <div className="flex flex-col">
+              <span className="font-unbounded font-bold text-xs sm:text-sm tracking-[0.16em] text-white">
+                Brew&amp;Bloom
+              </span>
+              <span className="font-mono text-[8px] tracking-[0.22em] text-[#D8B377] uppercase">
+                Coffee Shop
+              </span>
             </div>
-            <span className="font-unbounded font-semibold text-sm sm:text-base tracking-[0.24em] text-white">
-              [KOHI]
-            </span>
           </div>
 
           {/* Centered Cup + Saucer */}
@@ -133,7 +137,7 @@ export default function AboutUs() {
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-84 lg:h-84 rounded-full overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.55)] border-[6px] sm:border-[8px] border-white bg-[#FAF3E8]">
               <img
                 src="/images/about-coffee.jpg"
-                alt="Kohi Artisan Coffee Cup"
+                alt="Brew&Bloom Artisan Coffee Cup"
                 className="w-full h-full object-cover object-center scale-[1.35] transition-transform duration-700 hover:scale-[1.42]"
               />
             </div>
@@ -175,12 +179,12 @@ export default function AboutUs() {
             {/* Right Column: Website & Real Social Media SVGs */}
             <div className="flex flex-col items-start sm:items-end gap-3.5">
               <a 
-                href="https://www.kohi.coffee" 
+                href="https://www.brewandbloom.coffee" 
                 target="_blank" 
                 rel="noreferrer"
                 className="font-unbounded text-xs sm:text-sm text-[#2B160B]/85 hover:text-[#2B160B] tracking-wider transition-colors font-semibold"
               >
-                www.kohi.coffee
+                www.brewandbloom.coffee
               </a>
 
               {/* Real Social Media SVGs in round dark pills */}

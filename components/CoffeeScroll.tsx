@@ -266,20 +266,50 @@ export default function CoffeeScroll() {
             Padded 80px top so it never collides with 68px navbar
         ════════════════════════════════════════════ */}
         <TextLayer opacity={brandO} y={brandY} align="left">
-          {/* Brand name */}
-          <h1
-            style={{
-              fontFamily: '"Unbounded", sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(2.4rem, 5.2vw, 4.4rem)',
-              color: '#FFFFFF',
-              letterSpacing: '0.12em',
-              textShadow: HS,
-              lineHeight: 1.05,
-            }}
-          >
-            [KOHI]
-          </h1>
+          {/* Brand logo & name */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginBottom: '4px' }}>
+            <img
+              src="/logo.png"
+              alt="Brew&Bloom Coffee Shop"
+              style={{
+                width: 'clamp(52px, 8vw, 76px)',
+                height: 'clamp(52px, 8vw, 76px)',
+                borderRadius: '16px',
+                objectFit: 'cover',
+                border: '1.5px solid rgba(245,216,168,0.35)',
+                boxShadow: '0 12px 32px rgba(0,0,0,0.7)',
+              }}
+            />
+            <div>
+              <h1
+                style={{
+                  fontFamily: '"Unbounded", sans-serif',
+                  fontWeight: 700,
+                  fontSize: 'clamp(2rem, 4.4vw, 3.8rem)',
+                  color: '#FFFFFF',
+                  letterSpacing: '0.06em',
+                  textShadow: HS,
+                  lineHeight: 1.05,
+                }}
+              >
+                Brew&amp;Bloom
+              </h1>
+              <p
+                style={{
+                  fontFamily: 'DM Mono, monospace',
+                  fontSize: 'clamp(9px, 1.2vw, 12px)',
+                  letterSpacing: '0.36em',
+                  color: '#F5C878',
+                  textTransform: 'uppercase',
+                  fontWeight: 500,
+                  marginTop: '4px',
+                  textShadow: SS,
+                }}
+              >
+                Coffee Shop
+              </p>
+            </div>
+          </div>
 
           {/* Divider */}
           <div
@@ -441,7 +471,7 @@ export default function CoffeeScroll() {
               textShadow: SS,
             }}
           >
-            kohi — est. 2024
+            Brew&amp;Bloom — est. 2024
           </p>
           <h2
             style={{

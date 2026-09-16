@@ -71,10 +71,53 @@ export default function Home() {
       }}>
 
         {/* Logo */}
-        <a href="/" style={{ fontFamily: '"Unbounded", sans-serif', fontWeight: 600, fontSize: '1rem', color: '#EDE0C8', letterSpacing: '0.18em', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '2px' }}>
-          <span style={{ color: 'rgba(237,224,200,0.38)', fontWeight: 300 }}>[</span>
-          <span>KOHI</span>
-          <span style={{ color: 'rgba(237,224,200,0.38)', fontWeight: 300 }}>]</span>
+        <a
+          href="/"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            textDecoration: 'none',
+          }}
+        >
+          <img
+            src="/logo.png"
+            alt="Brew&Bloom Coffee Shop"
+            style={{
+              height: '42px',
+              width: '42px',
+              borderRadius: '8px',
+              objectFit: 'cover',
+              border: '1px solid rgba(200,148,90,0.3)',
+              boxShadow: '0 4px 14px rgba(0,0,0,0.45)',
+            }}
+          />
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span
+              style={{
+                fontFamily: '"Unbounded", sans-serif',
+                fontWeight: 700,
+                fontSize: '0.92rem',
+                color: '#EDE0C8',
+                letterSpacing: '0.12em',
+                lineHeight: 1.15,
+              }}
+            >
+              Brew&amp;Bloom
+            </span>
+            <span
+              style={{
+                fontFamily: 'DM Mono, monospace',
+                fontSize: '8px',
+                letterSpacing: '0.28em',
+                color: '#C8945A',
+                textTransform: 'uppercase',
+                fontWeight: 400,
+              }}
+            >
+              Coffee Shop
+            </span>
+          </div>
         </a>
 
         {/* Nav links */}
@@ -193,7 +236,22 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ borderTop: '1px solid #3D2A14', padding: '28px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
-        <span style={{ fontFamily: '"Unbounded", sans-serif', fontWeight: 300, fontSize: '0.85rem', color: '#6B5240', letterSpacing: '0.18em' }}>[KOHI]</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <img
+            src="/logo.png"
+            alt="Brew&Bloom Coffee Shop"
+            style={{
+              height: '30px',
+              width: '30px',
+              borderRadius: '6px',
+              objectFit: 'cover',
+              border: '1px solid rgba(200,148,90,0.25)',
+            }}
+          />
+          <span style={{ fontFamily: '"Unbounded", sans-serif', fontWeight: 500, fontSize: '0.82rem', color: '#EDE0C8', letterSpacing: '0.14em' }}>
+            Brew&amp;Bloom
+          </span>
+        </div>
         <div style={{ display: 'flex', gap: '28px' }}>
           {['Origins','Process','Wholesale','Contact'].map(l => (
             <a key={l} href="#" style={{ fontFamily: '"Autour One", system-ui', fontSize: '11px', color: '#3D2A14', letterSpacing: '0.22em', textDecoration: 'none', transition: 'color 0.2s' }}
@@ -202,7 +260,7 @@ export default function Home() {
             >{l}</a>
           ))}
         </div>
-        <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '9px', color: '#3D2A14', letterSpacing: '0.25em' }}>© 2024 Kohi Coffee Co.</p>
+        <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '9px', color: '#3D2A14', letterSpacing: '0.25em' }}>© 2024 Brew&amp;Bloom Coffee Shop. All rights reserved.</p>
       </footer>
 
     </main>

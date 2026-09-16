@@ -2,9 +2,14 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: '[KOHI] — Single Origin Cold Brew',
+  title: 'Brew&Bloom Coffee Shop — Single Origin & Artisan Roastery',
   description:
-    'Precision cold-brew coffee. Sourced from high-altitude farms, extracted over 72 hours at zero heat.',
+    'Brew&Bloom Coffee Shop: Precision cold-brew and artisan coffees sourced from high-altitude farms, slow-immersed over 72 hours.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export const viewport: Viewport = {

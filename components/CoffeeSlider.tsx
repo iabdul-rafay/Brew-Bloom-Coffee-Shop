@@ -43,11 +43,11 @@ const COFFEES: CoffeeProduct[] = [
     id: 'signature-latte',
     name: 'Signature Latte',
     displayName: 'SIGNATURE LATTE',
-    subtitle: 'KOHI House Blend · Steamed Whole Milk',
+    subtitle: 'Brew&Bloom House Blend · Steamed Whole Milk',
     price: '2.50',
     rating: 5.0,
     aboutText:
-      "Our pride and joy — KOHI's Signature Latte. A masterfully pulled triple ristretto topped with sweet steamed whole milk, poured with our signature tulip latte art. One sip and you'll understand.",
+      "Our pride and joy — Brew&Bloom's Signature Latte. A masterfully pulled triple ristretto topped with sweet steamed whole milk, poured with our signature tulip latte art. One sip and you'll understand.",
     theme: {
       bgGradient:
         'radial-gradient(ellipse 80% 80% at 25% 50%, #2e261f 0%, #15110d 45%, #080605 100%)',
