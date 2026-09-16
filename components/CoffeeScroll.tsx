@@ -41,29 +41,6 @@ function TextLayer({ opacity, y, align = 'center', children }: TextLayerProps) {
   );
 }
 
-/* ── Loader ──────────────────────────────────────────── */
-function Loader({ pct }: { pct: number }) {
-  const C = 2 * Math.PI * 26;
-  return (
-    <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#080604]">
-      <div className="relative w-16 h-16 mb-5">
-        <svg viewBox="0 0 60 60" className="w-full h-full -rotate-90">
-          <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="1"/>
-          <circle cx="30" cy="30" r="26" fill="none" stroke="#C8945A" strokeWidth="1"
-            strokeLinecap="round" strokeDasharray={C}
-            strokeDashoffset={C * (1 - pct / 100)}
-            style={{ transition: 'stroke-dashoffset 0.12s linear' }}
-          />
-        </svg>
-        <span className="absolute inset-0 flex items-center justify-center text-[10px] text-[#C8945A] tracking-widest"
-              style={{ fontFamily: 'DM Mono, monospace' }}>{pct}</span>
-      </div>
-      <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '9px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.55em' }}>
-        brewing
-      </p>
-    </div>
-  );
-}
 
 /* ── Main component ──────────────────────────────────── */
 export default function CoffeeScroll() {
@@ -74,8 +51,7 @@ export default function CoffeeScroll() {
   const rafRef       = useRef<number | null>(null);
   const loadedRef    = useRef(false);
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [loadPct,  setLoadPct]  = useState(0);
+  const [isReady, setIsReady] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -169,16 +145,25 @@ export default function CoffeeScroll() {
   useEffect(() => {
     const images: HTMLImageElement[] = new Array(TOTAL_FRAMES);
     let count = 0;
+
+    // Load first frame immediately for instant hero rendering
+    const img0 = new window.Image();
+    img0.src = frameSrc(0);
+    img0.onload = () => {
+      images[0] = img0;
+      framesRef.current = images;
+      draw(0);
+    };
+
     for (let i = 0; i < TOTAL_FRAMES; i++) {
-      const img = new window.Image();
-      img.src = frameSrc(i);
+      const img = i === 0 ? img0 : new window.Image();
+      if (i > 0) img.src = frameSrc(i);
       img.onload = img.onerror = () => {
         count++;
-        setLoadPct(Math.round((count / TOTAL_FRAMES) * 100));
         if (count === TOTAL_FRAMES) {
           framesRef.current = images;
           loadedRef.current = true;
-          setIsLoaded(true);
+          setIsReady(true);
           const initialFloat = smoothProgress.get() * (TOTAL_FRAMES - 1);
           currentFrameFloat.current = initialFloat;
           draw(initialFloat);
@@ -251,7 +236,6 @@ export default function CoffeeScroll() {
           background: 'linear-gradient(to top, rgba(8,6,4,0.65) 0%, transparent 100%)',
         }}/>
 
-        {!isLoaded && <Loader pct={loadPct} />}
 
         {/* ══════════════════════════════════════════════
             BRAND INTRO  —  left side, visible on load
