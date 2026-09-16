@@ -1,0 +1,56 @@
+/* ─── Google Fonts (loaded in layout.tsx <head>) ────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design tokens ──────────────────────────────────── */
+:root {
+  --ink:    #080604;
+  --parch:  #EDE0C8;
+  --amber:  #C8945A;
+  --gold:   #F5C878;
+  --roast:  #3D2A14;
+  --umber:  #6B5240;
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+@import 'lenis/dist/lenis.css';
+
+html { background: var(--ink); }
+
+body {
+  background: var(--ink);
+  color: var(--parch);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Font helpers ───────────────────────────────────── */
+.font-display   { font-family: 'Cormorant Garamond', Georgia, serif; }
+.font-lora      { font-family: 'Lora', Georgia, serif; }
+.font-logo      { font-family: 'Unbounded', sans-serif; }
+.font-unbounded { font-family: 'Unbounded', sans-serif; }
+.font-nav       { font-family: 'Autour One', system-ui; }
+.font-autour    { font-family: 'Autour One', system-ui; }
+.font-mono      { font-family: 'DM Mono', 'Courier New', monospace; }
+
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar        { width: 3px; }
+::-webkit-scrollbar-track  { background: var(--ink); }
+::-webkit-scrollbar-thumb  { background: var(--roast); }
+
+/* ─── Selection ──────────────────────────────────────── */
+::selection { background: var(--amber); color: var(--ink); }
+
+/* ─── Reduced motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
