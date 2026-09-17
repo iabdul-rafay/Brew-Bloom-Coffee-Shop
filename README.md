@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](https://brewandbloom-vert.vercel.app/).
+Open [https://brewandbloom-vert.vercel.app/](https://brewandbloom-vert.vercel.app).
 
 ---
 
